@@ -1,0 +1,39 @@
+<h1>Edit employee</h1>
+
+<%= form_for @employee, method: :patch do |f| %>
+
+<% if @employee.errors.any? %>
+		<% @employee.errors.full_messages.each do |msg| %>
+			<div class="alert alert-danger"><%= msg %></div>
+			<% end %>
+		<% end %>
+
+    <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+    </p>
+
+    <p>
+    <%= f.label :age %><br>
+    <%= f.text_field :age %>
+    </p>
+
+    <p>
+    <%= f.label :designation %><br>
+    <%= f.text_field :designation %>
+    </p>
+
+    <p>
+    <%= f.label :gender %><br>
+    <%= f.text_field :gender %>
+    </p>
+
+    <p>
+    <%= f.submit({:class => 'btn  btn-primary'}) %>
+    </p>
+
+    <% end %>
+
+
+
+    =============

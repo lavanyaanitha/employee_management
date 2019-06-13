@@ -1,0 +1,12 @@
+<hr>
+<h1>Blog Employees</h1>
+<% @employees.each do |e| %>
+ <div class="well">
+  	<h4><%= e.name %></h4>
+    <h6><%= e.designation %></h6>
+
+   <%= link_to "Read More", employee_path(e), :class => 'btn
+       btn-default'%>
+   </div>
+<hr>
+<% end %>

@@ -1,0 +1,37 @@
+<h1>Add employee</h1>
+<%= form_for :post, url: employees_path do |f| %>
+<% if @employee.errors.any? %>
+		<% @employee.errors.full_messages.each do |msg| %>
+			<div class="alert alert-danger"><%= msg %></div>
+			<% end %>
+		<% end %>
+
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :age %><br>
+		<%= f.text_field :age %>
+	</p>
+
+	<p>
+		<%= f.label :designation %><br>
+		<%= f.text_field :designation %>
+	</p>
+
+	<p>
+		<%= f.radio_button :gender, "female" %>
+		<%= f.label :female, "Female" %>
+		<%= f.radio_button :gender, "male" %>
+		<%= f.label :male, "Male" %>
+	</p>
+
+		<p>
+		<%= f.submit({:class => 'btn btn-primary'}) %>
+		</p>
+
+		<% end %>
+
+=============
