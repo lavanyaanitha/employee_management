@@ -21,10 +21,12 @@ test:
   database: db/test.sqlite3
 
   default: &default
-    adapter: pg
+    adapter: postgresql
     pool: 5
     timeout: 5000
 
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: db/production.pg
